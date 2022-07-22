@@ -11,7 +11,7 @@ import { MdLocationOn } from "react-icons/md";
 import Link from "next/link";
 import styles from "./footer.module.css";
 
-let token = 1;
+let token = null;
 
 const Footer = () => {
   return (

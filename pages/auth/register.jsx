@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import Link from "next/link";
+import styles from "./Login.module.css";
 
 export default function register() {
   const {
@@ -11,8 +12,8 @@ export default function register() {
   const onSubmit = (data) => console.log(data);
 
   return (
-    <div className="login-container">
-      <form onSubmit={handleSubmit(onSubmit)} className="login-form">
+    <div className={styles.login_container}>
+      <form onSubmit={handleSubmit(onSubmit)} className={styles.login_form}>
         <input
           type="text"
           placeholder="Enter your first name"

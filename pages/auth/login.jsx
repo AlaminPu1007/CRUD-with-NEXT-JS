@@ -2,6 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import Link from "next/link";
 // import useUser from "../../lib/useUser";
+import styles from "./Login.module.css";
 
 export default function login() {
   // here we just check if user is already logged in and redirect to profile
@@ -40,8 +41,8 @@ export default function login() {
     // }
   };
   return (
-    <div className="login-container">
-      <form onSubmit={handleSubmit(onSubmit)} className="login-form">
+    <div className={styles.login_container}>
+      <form onSubmit={handleSubmit(onSubmit)} className={styles.login_form}>
         <input
           {...register("email", { required: true, maxLength: 20 })}
           name="email"
