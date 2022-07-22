@@ -1,0 +1,32 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  padding: 2% 0;
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  justify-content: center;
+}
+
+.login-container .login-form input {
+  padding: 3%;
+  margin: 1% 0;
+  outline: none;
+}
+
+.login-container .login-form input[type="submit"] {
+  background-color: #04aa6d;
+  border: none;
+  color: white;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.login-container .login-form a{
+    color: black;
+    font-size: 0.8rem;
+    padding: 5px 0;
+}

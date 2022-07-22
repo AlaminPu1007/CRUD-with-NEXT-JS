@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import styles from "./header.module.css";
 
@@ -16,12 +17,36 @@ function header() {
           </label>
           <div className={styles.nav_container}>
             <ul className={styles.nav_tabs}>
-              <li className={styles.nav_tab}>Home</li>
-              <li className={styles.nav_tab}>Products</li>
-              <li className={styles.nav_tab}>Services</li>
-              <li className={styles.nav_tab}>Contact</li>
-              <li className={styles.nav_tab}>Sign in</li>
-              <li className={styles.nav_tab}>Sign up</li>
+              <Link href="/">
+                <li className={styles.nav_tab}>
+                  <a>Home</a>
+                </li>
+              </Link>
+              <Link href="/">
+                <li className={styles.nav_tab}>
+                  <a>Products</a>
+                </li>
+              </Link>
+              <Link href="/">
+                <li className={styles.nav_tab}>
+                  <a>Services</a>
+                </li>
+              </Link>
+              <Link href="/">
+                <li className={styles.nav_tab}>
+                  <a>Contact</a>
+                </li>
+              </Link>
+              <Link href="/auth/login">
+                <li className={styles.nav_tab}>
+                  <a>Sign in</a>
+                </li>
+              </Link>
+              <Link href="/auth/register">
+                <li className={styles.nav_tab}>
+                  <a>Sign up</a>
+                </li>
+              </Link>
             </ul>
           </div>
         </nav>
