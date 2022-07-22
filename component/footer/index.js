@@ -11,7 +11,7 @@ import { MdLocationOn } from "react-icons/md";
 import Link from "next/link";
 import styles from "./footer.module.css";
 
-let token = null;
+let token = 1;
 
 const Footer = () => {
   return (
@@ -55,33 +55,44 @@ const Footer = () => {
             <h1>My Account</h1>
 
             {token ? (
-              <Link href="/" onClick={LogOutFunction}>
-                {/* <VscAccount size={22} className={styles.footer_icon} /> */}
-                <a>Log Out</a>
-              </Link>
+              <div className={styles.linkWithIcon}>
+                <VscAccount size={22} className={styles.footer_icon} />
+                <Link href="/">
+                  <a>Log Out</a>
+                </Link>
+              </div>
             ) : (
-              <Link href="/auth/login">
-                {/* <VscAccount size={22} className={styles.footer_icon} /> */}
-                <a>Login</a>
-              </Link>
+              <div className={styles.linkWithIcon}>
+                <VscAccount size={22} className={styles.footer_icon} />
+                <Link href="/auth/login">
+                  <a>Login</a>
+                </Link>
+              </div>
             )}
             {token ? (
-              <Link href="/">
-                {/* <BsPersonPlus size={25} className={styles.footer_icon} /> */}
-                <a>Profile</a>
-              </Link>
+              <div className={styles.linkWithIcon}>
+                <BsPersonPlus size={22} className={styles.footer_icon} />
+                <Link href="/">
+                  <a>Profile</a>
+                </Link>
+              </div>
             ) : (
-              <Link href="/">
-                {/* <BsPersonPlus size={25} className={styles.footer_icon} /> */}
-                <a>Register a account</a>
-              </Link>
+              <div className={styles.linkWithIcon}>
+                <BsPersonPlus size={25} className={styles.footer_icon} />
+
+                <Link href="/auth/register">
+                  <a>Register a account</a>
+                </Link>
+              </div>
             )}
 
             {token ? (
-              <Link href="/">
-                {/* <AiFillUnlock size={25} className={styles.footer_icon} /> */}
-                <a>Forget password</a>
-              </Link>
+              <div className={styles.linkWithIcon}>
+                <AiFillUnlock size={25} className={styles.footer_icon} />
+                <Link href="/" className={styles.linkWithIcon}>
+                  <a>Forget password</a>
+                </Link>
+              </div>
             ) : null}
           </div>
         </div>

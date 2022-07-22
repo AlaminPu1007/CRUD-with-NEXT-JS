@@ -19,7 +19,8 @@
   padding-bottom: 20px;
 }
 
-.footer_sections .footer_section a {
+.footer_sections .footer_section a,
+.linkWithIcon {
   text-decoration: none;
   align-items: center;
   display: flex;
@@ -32,6 +33,10 @@
 }
 
 .footer_section a .footer_icon {
-  /* color: #669ad3; */
   color: #fff;
+}
+.linkWithIcon .footer_icon,
+.linkWithIcon a {
+  color: #fff;
+  margin: 0 5px;
 }
