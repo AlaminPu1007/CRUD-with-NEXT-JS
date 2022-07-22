@@ -4,7 +4,7 @@
  * these components are often reused between pages
  */
 import React from "react";
-import Navbar from "../component/header/header";
+import Navbar from "../component/header/index";
 import Footer from "../component/footer/index";
 
 function Layout({ children }) {
