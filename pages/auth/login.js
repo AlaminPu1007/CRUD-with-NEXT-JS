@@ -4,6 +4,8 @@ import Link from "next/link";
 // import useUser from "../../lib/useUser";
 import styles from "./Login.module.css";
 
+import api from "../../api-configs/instance";
+
 export default function login() {
   // here we just check if user is already logged in and redirect to profile
   // const { mutateUser } = useUser({
@@ -20,6 +22,17 @@ export default function login() {
   const onSubmit = async (data, e) => {
     // LoginMethod({ data, router });
     e.preventDefault();
+
+    try {
+      const res = await api.post("/api/auth/login", {
+        email: data.email,
+        password: data.password,
+      });
+      console.log(res.data, "from onsubmit method");
+    } catch (err) {
+      console.log(err.message, "error message from login");
+    }
+
     // const body = {
     //   username: data.email,
     // };
