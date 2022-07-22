@@ -24,7 +24,7 @@ function header() {
               </Link>
               <Link href="/">
                 <li className={styles.nav_tab}>
-                  <a>Products</a>
+                  <a>Create</a>
                 </li>
               </Link>
               <Link href="/">

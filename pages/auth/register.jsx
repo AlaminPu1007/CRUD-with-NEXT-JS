@@ -43,7 +43,7 @@ export default function register() {
         />
 
         <div>
-          <Link href="/">
+          <Link href="/auth/login">
             <a>Already have an account? Please sign-in.</a>
           </Link>
         </div>
