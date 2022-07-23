@@ -6,16 +6,41 @@ import useUser from "../../lib/useUser";
 
 export default function register() {
   // here we just check if user is already logged in and redirect to profile
-  const { mutateUser } = useUser();
-
-  console.log(mutateUser, "from register screen");
+  const { mutateUser } = useUser({
+    redirectTo: "/",
+    redirectIfFound: true,
+  });
 
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+
+  const onSubmit = async (data, e) => {
+    e.preventDefault();
+    const body = {
+      name: data.name,
+      email: data.email,
+      password: data.password,
+    };
+
+    try {
+      // mutateUser(
+      await fetch("/api/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
+      // );
+    } catch (error) {
+      if (error) {
+        console.log(error.message, "error message from register screen");
+      } else {
+        console.error("An unexpected error happened:", error);
+      }
+    }
+  };
 
   return (
     <div className={styles.login_container}>
@@ -23,7 +48,7 @@ export default function register() {
         <input
           type="text"
           placeholder="Enter your name"
-          {...register("First name", { required: true, maxLength: 80 })}
+          {...register("name", { required: true, maxLength: 80 })}
         />
         {/* <input
           type="text"
