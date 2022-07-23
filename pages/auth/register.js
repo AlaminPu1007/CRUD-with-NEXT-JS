@@ -2,8 +2,14 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import Link from "next/link";
 import styles from "./Login.module.css";
+import useUser from "../../lib/useUser";
 
 export default function register() {
+  // here we just check if user is already logged in and redirect to profile
+  const { mutateUser } = useUser();
+
+  console.log(mutateUser, "from register screen");
+
   const {
     register,
     handleSubmit,
@@ -16,14 +22,14 @@ export default function register() {
       <form onSubmit={handleSubmit(onSubmit)} className={styles.login_form}>
         <input
           type="text"
-          placeholder="Enter your first name"
+          placeholder="Enter your name"
           {...register("First name", { required: true, maxLength: 80 })}
         />
-        <input
+        {/* <input
           type="text"
           placeholder="Enter your last name"
           {...register("Last name", { required: true, maxLength: 100 })}
-        />
+        /> */}
         <input
           {...register("email", { required: true, maxLength: 20 })}
           name="email"
