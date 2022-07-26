@@ -1,6 +1,6 @@
 import { combineReducers } from "@reduxjs/toolkit";
 // eslint-disable-next-line import/no-cycle
-import auth from "app/auth/store";
+import auth from "../auth";
 
 const createReducer = (asyncReducers) => (state, action) => {
   const combinedReducer = combineReducers({
@@ -11,9 +11,9 @@ const createReducer = (asyncReducers) => (state, action) => {
   /*
 	Reset the redux store when user logged out
 	 */
-  if (action.type === "auth/user/userLoggedOut") {
-    // state = undefined;
-  }
+  // if (action.type === "auth/user/userLoggedOut") {
+  //   // state = undefined;
+  // }
 
   return combinedReducer(state, action);
 };

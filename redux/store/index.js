@@ -1,3 +1,9 @@
+/**
+ * Our Root store define here,
+ * We used code splitting,
+ * learn about: https://redux.js.org/usage/code-splitting
+ */
+
 import { configureStore } from "@reduxjs/toolkit";
 import createReducer from "./rootReducer";
 
