@@ -6,7 +6,7 @@ import Router from "next/router";
 export default withIronSessionApiRoute(loginRoute, sessionOptions);
 
 async function loginRoute(req, res) {
-  const { name, email, password } = await req.body;
+  const { name = null, email, password } = await req.body;
   const body = { name, email, password };
   try {
     const response = await api.post("api/auth/register", body);

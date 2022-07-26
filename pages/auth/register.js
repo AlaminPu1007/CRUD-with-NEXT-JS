@@ -8,7 +8,7 @@ export default function register() {
   // here we just check if user is already logged in and redirect to profile
   const { mutateUser } = useUser({
     redirectTo: "/",
-    redirectIfFound: true,
+    redirectIfFound: false,
   });
 
   const {
