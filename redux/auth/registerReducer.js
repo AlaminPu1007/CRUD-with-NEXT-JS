@@ -14,11 +14,19 @@ const registerSlice = createSlice({
   initialState,
   reducers: {
     //our all reducer method will be defined here
+    registerSuccess: (state, action) => {
+      state.success = true;
+      state.errors = [];
+    },
+    registerError: (state, action) => {
+      state.success = false;
+      state.errors = action.payload;
+    },
   },
   extraReducers: {},
 });
 
 // exported reducer method
-export const {} = registerSlice.actions;
+export const { registerSuccess, registerError } = registerSlice.actions;
 
 export default registerSlice.reducer;

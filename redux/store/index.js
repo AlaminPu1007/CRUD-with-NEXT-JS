@@ -14,7 +14,7 @@ if (process.env.NODE_ENV === "development" && module.hot) {
   });
 }
 
-const middlewares = [];
+const middleWares = [];
 
 if (process.env.NODE_ENV === "development") {
   const { createLogger } = require(`redux-logger`);
@@ -22,7 +22,7 @@ if (process.env.NODE_ENV === "development") {
     collapsed: (getState, action, logEntry) => !logEntry.error,
   });
 
-  middlewares.push(logger);
+  middleWares.push(logger);
 }
 
 const store = configureStore({
@@ -31,7 +31,7 @@ const store = configureStore({
     getDefaultMiddleware({
       immutableCheck: false,
       serializableCheck: false,
-    }).concat(middlewares),
+    }).concat(middleWares),
   devTools: process.env.NODE_ENV === "development",
 });
 

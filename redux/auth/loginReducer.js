@@ -15,10 +15,15 @@ const loginSlice = createSlice({
   initialState,
   reducers: {
     //our all reducer method will be defined here
+    loginSuccess: (state, action) => {
+      state.success = true;
+      state.errors = [];
+      state.loading = false;
+    },
   },
   extraReducers: {},
 });
 // exported reducer method
-export const {} = loginSlice.actions;
+export const { loginSuccess } = loginSlice.actions;
 
 export default loginSlice.reducer;
