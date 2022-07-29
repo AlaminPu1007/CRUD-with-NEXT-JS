@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import Link from "next/link";
-import styles from "./Login.module.css";
+import styles from "../../css-module/auth/Login.module.css";
 import useUser from "../../lib/useUser";
 
 export default function register() {

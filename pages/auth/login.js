@@ -2,7 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import Link from "next/link";
 // import useUser from "../../lib/useUser";
-import styles from "./Login.module.css";
+import styles from "../../css-module/auth/Login.module.css";
 
 import api from "../../api-configs/instance";
 
